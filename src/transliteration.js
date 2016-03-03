@@ -28,11 +28,12 @@ var ucs2decode = require('punycode').ucs2.decode,
         return strNew.replace(/\s+$/, '');
     },
     Slugify = function (str, options) {
+        str = str || '';
+        options = options || {};
         var defaultOptions = {
             lowercase: true,
             separator: '-'
         };
-        options = options || {};
         for (var prop in defaultOptions) {
             if (typeof options[prop] === 'undefined') {
                 options[prop] = defaultOptions[prop];
